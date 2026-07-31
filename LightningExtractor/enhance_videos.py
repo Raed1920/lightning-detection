@@ -119,7 +119,7 @@ def protect_lightning(orig_dir: Path, rife_dir: Path) -> None:
         diff = cv2.absdiff(a, b)
         gray_diff = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
         alpha = np.clip(
-            (gray_diff.astype(np.float32) - 25.0) / 80.0, 0.0, 1.0
+            (gray_diff.astype(np.float32) - 8.0) / 40.0, 0.0, 1.0
         )[..., None]
         if alpha.max() <= 0.0:
             continue
@@ -149,6 +149,9 @@ def encode_final(frames_dir: Path, output_path: Path, fps: int = 60) -> bool:
         "-i", str(frames_dir / "%08d.png"),
         "-c:v", "hevc_nvenc",
         "-cq", "18", "-preset", "p7",
+        "-color_primaries", "bt470bg",
+        "-color_trc", "bt470bg",
+        "-colorspace", "smpte170m",
         "-vf", "format=yuv420p",
         "-pix_fmt", "yuv420p",
         "-movflags", "+faststart",
