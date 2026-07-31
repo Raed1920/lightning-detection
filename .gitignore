@@ -1,0 +1,57 @@
+# ===== Code only: everything else ignored =====
+
+# Videos
+videos/
+LightningExtractor/input/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Generated output / results
+LightningExtractor/output/
+LightningExtractor/enhanced_output/
+result/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# AI models
+*.bin
+*.param
+*.onnx
+*.pb
+*.h5
+*.hdf5
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Tools / binaries / archives
+LightningExtractor/tools/
+LightningExtractor/ffmpeg.exe
+*.exe
+*.dll
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
